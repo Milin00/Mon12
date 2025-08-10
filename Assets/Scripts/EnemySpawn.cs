@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject EnemyPrefab;
 
-    private GameObject player;
-    private Vector3 enemySpawnPoint;
+    private GameObject Player;
+    private Vector3 EnemySpawnPoint;
     private float spawnTime = 3.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("player");
-        enemySpawnPoint = new Vector3(
-            player.transform.position.x + Random.Range(-10.0f, 10.0f),
-            player.transform.position.y,
-            player.transform.position.z + Random.Range(-10.0f, 15.0f)
+        Player = GameObject.Find("Player");
+        EnemySpawnPoint = new Vector3(
+            Player.transform.position.x + Random.Range(-10.0f, 10.0f),
+            Player.transform.position.y,
+            Player.transform.position.z + Random.Range(-10.0f, 15.0f)
             );
-        Instantiate (enemyPrefab,enemySpawnPoint,new Quaternion(0,180,0,0));    
+        Instantiate (EnemyPrefab,EnemySpawnPoint,new Quaternion(0,180,0,0));    
     }
 
     // Update is called once per frame
@@ -24,12 +24,12 @@ public class EnemySpawn : MonoBehaviour
     {
         if(Time.time>spawnTime)
         {
-            enemySpawnPoint = new Vector3(
-           player.transform.position.x + Random.Range(-10.0f, 10.0f),
-           player.transform.position.y,
-           player.transform.position.z + Random.Range(-10.0f, 15.0f)
+           EnemySpawnPoint = new Vector3(
+              Player.transform.position.x + Random.Range(-10.0f, 10.0f),
+              Player.transform.position.y,
+              Player.transform.position.z + Random.Range(10.0f, 15.0f)
            );
-            Instantiate(enemyPrefab, enemySpawnPoint, new Quaternion(0, 180, 0, 0));
+            Instantiate(EnemyPrefab, EnemySpawnPoint, new Quaternion(0, 180, 0, 0));
             spawnTime = Time.time + Random.Range(1.0f, 3.0f);
         }
     }
