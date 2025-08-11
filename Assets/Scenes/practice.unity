@@ -188,6 +188,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5352958571798197664, guid: c564c8c0d0cdc45429417f315e9f3e41, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1383756448}
+    - targetCorrespondingSourceObject: {fileID: 5352958571798197664, guid: c564c8c0d0cdc45429417f315e9f3e41, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1383756450}
   m_SourcePrefab: {fileID: 100100000, guid: c564c8c0d0cdc45429417f315e9f3e41, type: 3}
 --- !u!1 &203844586
 GameObject:
@@ -640,6 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e946f269fa4d7246a4a6e004de50e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyEffect: {fileID: 1820366818444024096, guid: ae95132eff68a23438149423bd137bc7, type: 3}
 --- !u!54 &1383756447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -690,6 +694,27 @@ CapsuleCollider:
   m_Height: 1.4977962
   m_Direction: 1
   m_Center: {x: -0.08375889, y: 0.6845235, z: -0.032748282}
+--- !u!135 &1383756450
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383756443}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Radius: 0.72701085
+  m_Center: {x: 0, y: 0.72, z: 0}
 --- !u!1 &1810856028
 GameObject:
   m_ObjectHideFlags: 0

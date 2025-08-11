@@ -1,13 +1,17 @@
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem EnemyEffect;
     private Animator anim;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private SphereCollider attacCollider;
+    private float attackTime = 0.0f;
     void Start()
     {
         anim = GetComponent<Animator>();
+        attacCollider = GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
@@ -22,7 +26,31 @@ public class PlayerControler : MonoBehaviour
         }
         else
         {
-            anim.SetBool("IsRun",false);
+            anim.SetBool("IsRun", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            anim.SetTrigger("DoAttack");
+            attacCollider.enabled = true;
+        }
+
+        if (attacCollider.enabled)
+        {
+            attackTime += Time.deltaTime;
+            if (attackTime > 0.5f)
+            {
+                attackTime = 0.0f;
+                attacCollider.enabled = false;
+            }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+            Instantiate(EnemyEffect,other.transform.position,Quaternion.identity);
         }
     }
 }
