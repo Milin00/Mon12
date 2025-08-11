@@ -25,9 +25,9 @@ public class EnemySpawn : MonoBehaviour
         if(Time.time>spawnTime)
         {
            EnemySpawnPoint = new Vector3(
-              Player.transform.position.x + Random.Range(-10.0f, 10.0f),
+              Player.transform.position.x + Random.Range(-15.0f, -15.0f),
               Player.transform.position.y,
-              Player.transform.position.z + Random.Range(10.0f, 15.0f)
+              Player.transform.position.z + Random.Range(15.0f,15.0f)
            );
             Instantiate(EnemyPrefab, EnemySpawnPoint, new Quaternion(0, 180, 0, 0));
             spawnTime = Time.time + Random.Range(1.0f, 3.0f);
