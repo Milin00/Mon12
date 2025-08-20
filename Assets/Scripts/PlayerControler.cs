@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class PlayerControler : MonoBehaviour
     private Animator anim;
     private SphereCollider attacCollider;
     private float attackTime = 0.0f;
-    void Start()
+
+        void Start()
     {
         anim = GetComponent<Animator>();
         attacCollider = GetComponent<SphereCollider>();
@@ -17,9 +19,12 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        float y = Input.GetAxis("Jump");
+        var x = Input.GetAxis("Horizontal");
+        var z = Input.GetAxis("Vertical");
+        var y = Input.GetAxis("Jump");
+        var xRotation = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up);
+        var velocity = xRotation * new Vector3(x, 0, y).normalized;
+
         if (x != 0f || z != 0f)
         {
             anim.SetBool("IsRun", true);
