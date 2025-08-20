@@ -15,7 +15,7 @@ public class EnemyControler : MonoBehaviour
         transform.position = Vector3.MoveTowards(
             transform.position,
             player.transform.position,
-            Time.deltaTime * 2.0f
+            Time.deltaTime * -2.0f
             );
     }
 }

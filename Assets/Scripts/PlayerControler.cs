@@ -19,6 +19,7 @@ public class PlayerControler : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        float y = Input.GetAxis("Jump");
         if (x != 0f || z != 0f)
         {
             anim.SetBool("IsRun", true);

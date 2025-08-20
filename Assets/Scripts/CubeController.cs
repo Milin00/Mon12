@@ -26,11 +26,5 @@ public class CubeController : MonoBehaviour
         move = new Vector3(input.x,0,input.y)* moveSpeed * Time.deltaTime;  
     }
 
-    private void OnJump(InputValue val)
-    {
-        if (val.isPressed)
-        {
-            rb.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
-        }
-    }
+   
 }
