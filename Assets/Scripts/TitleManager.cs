@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement; // シーン遷移する為に必要
 using UnityEngine.UI; // UIの為に必要
+using UnityEngine.EventSystems;
 
 public class TitleManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class TitleManager : MonoBehaviour
     /// </summary>
     void Start()
     {
+        EventSystem.current.SetSelectedGameObject(StartButton.gameObject);
+
         // スタートボタンが押されたときに、指定したシーンを読み込む
         StartButton.onClick.AddListener(() =>
         {
