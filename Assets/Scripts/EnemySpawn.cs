@@ -16,7 +16,9 @@ public class EnemySpawn : MonoBehaviour
             Player.transform.position.y,
             Player.transform.position.z + Random.Range(0.0f, 15.0f)
             );
-        Instantiate (EnemyPrefab,EnemySpawnPoint,new Quaternion(0,180,0,0));    
+        Instantiate (EnemyPrefab,EnemySpawnPoint,new Quaternion(0,180,0,0));
+
+       
     }
 
     // Update is called once per frame

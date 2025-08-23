@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
+
 
 public class PlayerControler : MonoBehaviour
 {
@@ -35,7 +35,7 @@ public class PlayerControler : MonoBehaviour
             anim.SetBool("IsRun", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetTrigger("DoAttack");
             attacCollider.enabled = true;
